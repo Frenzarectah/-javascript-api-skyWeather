@@ -1,3 +1,3 @@
 # GoogleTail 
 
-A Google page Replica made with #tailwindcss 
+A Google page Replica made to practice with #tailwindcss :>
