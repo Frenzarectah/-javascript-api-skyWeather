@@ -1,12 +1,7 @@
-# GoogleTail <WIP>
+# Weather App <WIP>
 
-A Google page Replica made to practice with #tailwindcss :></br>
-
-# install
-
-In order to try this page, you have to install #tailwindcss via npm, then open the CLI into the folder and digit:<br>
-<br>
-<u>npx tailwindcss -i style.css -o ./dist/output.css --watch</u>      
-</br>
-After the building is done, open index.html directly on browser <br>
+A project aimed to practice and undestrand fetch api and asyncronous scripting in #js </br>
+# Technologies </br>
+Js with fetch api to connect with Openweather <br>
+Tailwindcss for the styling</br>
 # Enjoy! #
