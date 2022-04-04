@@ -1,14 +1,20 @@
-let pos =()=>{alert(navigator.geolocation.getCurrentPosition((position) => {
-    position.coords.latitude, position.coords.longitude;
-  }))};
+let pos =()=>navigator.geolocation.getCurrentPosition(success);
+
+function success(pos) {
+    if(navigator.geolocation){
+        var cord = pos.coords;
+        console.log(`Latitude : ${cord.latitude}`);
+        console.log(`Longitude: ${cord.longitude}`);
+        console.log(`More or less ${cord.accuracy} meters.`);
+    }else{
+      console.log("GeoLoc not available!");
+    }
+  }
 /*const _TOKEN = "c304a9d6ab5ab3f90cd09826ab7e8bec";
 
-const pos = navigator.geolocation.getCurrentPosition(position => {
-    const { latitude, longitude } = position.coords;
-  });
 const displayRes = (result)=> console.log(result);
 
-const  weatherBalloon = ( city )=> {
+const  weatherBalloon = ( lat,long )=> {
     fetch('https://api.openweathermap.org/data/2.5/weather?id=' + city+ '&appid='+_TOKEN)  
     .then(data => {
         return data.json();
