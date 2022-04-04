@@ -1,3 +1,4 @@
+//FUNCTION FOR GEOLOCATING THE DEVICE
 let pos =()=>navigator.geolocation.getCurrentPosition(success);
 
 function success(pos) {
@@ -6,34 +7,25 @@ function success(pos) {
         console.log(`Latitude : ${cord.latitude}`);
         console.log(`Longitude: ${cord.longitude}`);
         console.log(`More or less ${cord.accuracy} meters.`);
+        weatherByCoord(cord.latitude,cord.longitude);
     }else{
       console.log("GeoLoc not available!");
     }
   }
-/*const _TOKEN = "c304a9d6ab5ab3f90cd09826ab7e8bec";
+const _TOKEN = "c304a9d6ab5ab3f90cd09826ab7e8bec";
 
 const displayRes = (result)=> console.log(result);
 
-const  weatherBalloon = ( lat,long )=> {
-    fetch('https://api.openweathermap.org/data/2.5/weather?id=' + city+ '&appid='+_TOKEN)  
+const weatherByCoord = (lat,long)=> {
+    fetch('https://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+long+'&appid='+_TOKEN)  
     .then(data => {
         return data.json();
         })
         .then(post => {
         displayRes(post.name); //ritorna coordinate
-        return post.coord;
         });
     }
-  window.onload = function() {
-   console.log(weatherBalloon( 6167865 ));
-   document.getElementById("faind").onclick=()=>{
-    const pos = navigator.geolocation.getCurrentPosition(position => {
-        const { latitude, longitude } = position.coords;
-      });
-      alert(pos);
-}
 
-}
 
   /*{"coord":{
       "lon":-79.4163,
