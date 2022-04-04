@@ -1,28 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> tailtry</title>
+        <title> Luke Skyweather - may the meteo be with you!</title>
         <link rel="stylesheet" href="dist/output.css">
         <script src="dist/apiWeather.js"></script>
     </head>
     <body>
-        <div class="m-5 font-[Arial] flex justify-between">
-            <div class="flex flex-row">
-                <span class="text-sm mr-5 hover:underline">Chi Siamo</span>
-                <span class="text-sm mr-5 hover:underline">Google Store</span>
-            </div>
-            <div class="flex flex-row items-center">
-                <span class="text-sm mr-5 hover:underline">Gmail</span>
-                <span class="text-sm mr-5 hover:underline">Immagini</span>
-                <img class="mr-5" alt="menu" src="./src/assets/9box.svg">
-                <img alt="login" id="faind" onclick="pos()" class="rounded-full" src="./src/assets/me.png">
-            </div>
-            </div>
-            <div class="flex flex-col flex-full justify-center items-center">
-                <img alt="logo" src="./src/assets/googlelogo.png">
-                <input class="m-5 h-11 w-2/5 rounded-full border border-gray items-center justify-between" type="text" placeholder="Cerca sul sito">
-                
-                </div>
+        <div class="flex flex-col justify-center items-center">
+            <div onclick="pos()" class="w-100 border border-black"><img class="object-fill" src="./src/assets/logo.png"></div>
+            <div id="place"></div>
         </div>
     </body>
 </html>

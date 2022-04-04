@@ -22,7 +22,12 @@ const weatherByCoord = (lat,long)=> {
         return data.json();
         })
         .then(post => {
-        displayRes(post.name); //ritorna coordinate
+        displayRes(post); //ritorna coordinate
+        let divve = document.createElement("div");
+        divve.classList.add("item-center");
+        divve.classList.add("justify-center");
+        divve.innerHTML=post.name;
+        document.getElementById("place").appendChild(divve);
         });
     }
 
