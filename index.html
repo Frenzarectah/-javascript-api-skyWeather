@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
         <title> Luke Skyweather - may the meteo be with you!</title>
+        <meta name="viewport" content="width=device-width height=device-height initial-scale=1.0">
         <link rel="stylesheet" href="dist/output.css">
         <script src="dist/apiWeather.js"></script>
     </head>
     <body>
-        <div class="flex flex-col justify-center items-center">
-            <div onclick="pos()" class="w-100 border border-black"><img class="object-fill" src="./src/assets/logo.png"></div>
-            <div id="place"></div>
+        <div class="flex flex-col w-full h-screen justify-center border border-black">
+            <div class="flex justify-center self-center"id="place"></div>
+            <img onclick="pos()" class="self-center" src="./src/assets/logo.png"></div>
         </div>
     </body>
 </html>

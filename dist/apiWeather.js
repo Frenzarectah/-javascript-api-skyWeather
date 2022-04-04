@@ -1,7 +1,7 @@
 //FUNCTION FOR GEOLOCATING THE DEVICE
-let pos =()=>navigator.geolocation.getCurrentPosition(success);
+let pos =()=>navigator.geolocation.getCurrentPosition(success,error,optional);
 
-function success(pos) {
+const success=(pos)=> {
     if(navigator.geolocation){
         var cord = pos.coords;
         console.log(`Latitude : ${cord.latitude}`);
@@ -12,6 +12,13 @@ function success(pos) {
       console.log("GeoLoc not available!");
     }
   }
+const error=()=>{
+    alert('no position available.');
+}
+const optional = {
+    enableHighAccuracy: true,
+};
+
 const _TOKEN = "c304a9d6ab5ab3f90cd09826ab7e8bec";
 
 const displayRes = (result)=> console.log(result);
@@ -26,7 +33,8 @@ const weatherByCoord = (lat,long)=> {
         let divve = document.createElement("div");
         divve.classList.add("item-center");
         divve.classList.add("justify-center");
-        divve.innerHTML=post.name;
+        divve.innerHTML="L'app mostrerà il meteo di: ";
+        divve.innerHTML+=post.name;
         document.getElementById("place").appendChild(divve);
         });
     }
