@@ -1,9 +1,6 @@
-let pos = ()=>{
-        alert(navigator.geolocation.getCurrentPosition((position) => {
-        position.coords.latitude, position.coords.longitude;
-      }));
-}
-
+let pos =()=>{alert(navigator.geolocation.getCurrentPosition((position) => {
+    position.coords.latitude, position.coords.longitude;
+  }))};
 /*const _TOKEN = "c304a9d6ab5ab3f90cd09826ab7e8bec";
 
 const pos = navigator.geolocation.getCurrentPosition(position => {
