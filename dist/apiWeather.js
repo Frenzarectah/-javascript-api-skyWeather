@@ -1,5 +1,16 @@
+
+const fades = () =>{ 
+    let page = document.getElementById("page");
+    page.classList.add("fadeOut");
+    let body = document.getElementsByTagName("body");
+    body.removeChild(page);
+    page.innerHTML=`<div id="place">
+                    </div>`
+    start();
+}
+
 //FUNCTION FOR GEOLOCATING THE DEVICE
-let pos =()=>navigator.geolocation.getCurrentPosition(success,error,optional);
+let start =()=>navigator.geolocation.getCurrentPosition(success,error,optional);
 
 const success=(pos)=> {
     if(navigator.geolocation){
@@ -8,6 +19,7 @@ const success=(pos)=> {
         console.log(`Longitude: ${cord.longitude}`);
         console.log(`More or less ${cord.accuracy} meters.`);
         weatherByCoord(cord.latitude,cord.longitude);
+
     }else{
       console.log("GeoLoc not available!");
     }
@@ -33,6 +45,7 @@ const weatherByCoord = (lat,long)=> {
         let divve = document.createElement("div");
         divve.classList.add("item-center");
         divve.classList.add("justify-center");
+        divve.innerHTML="";
         divve.innerHTML="L'app mostrerà il meteo di: ";
         divve.innerHTML+=post.name;
         document.getElementById("place").appendChild(divve);
