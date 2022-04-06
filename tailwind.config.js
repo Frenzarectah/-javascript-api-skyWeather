@@ -371,7 +371,7 @@ module.exports = {
         '"Courier New"',
         'monospace',
       ],
-      'dosis': ['"Dosis"'],
+      dosis: ['"Dosis"'],
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],

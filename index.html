@@ -20,13 +20,13 @@
             <nav class="flex flex-row justify-between items-center m-5">
                 <img onclick="start()" class="w-14 md:w-16" src="./src/assets/logo_only.png">
                 <div class="flex flex-row h-9">
-                    <input class="bg-[#f7f7f7] rounded-md p-2 w-8/10" type="search" placeholder="Find the city...">
-                    <div class="bg-[#f4855c] -ml-5 rounded-xl w-2/10"><img src="src/assets/magnifier.png"></div>
+                    <input id="findCity" class="bg-[#f7f7f7] rounded-md p-2 w-8/10" type="search" placeholder="Find the city...">
+                    <div onclick="searchWeath()" class="bg-[#f4855c] -ml-5 rounded-xl w-2/10"><img src="src/assets/magnifier.png"></div>
                 </div>    
             </nav>
-            <section class="w-full font-mono m-5 flex flex-col">
-                <div id="nameCity" class="m-5 text-right">Nome Città</div>
-                <div id="meteoIcon" class="m-5 text-center">Icona meteo</div>
+            <section class="w-full h-screen font-dosis p-5 flex flex-col bg-[#dcdcdc]">
+                <div id="nameCity" class="text-left text-2xl">Nome Città</div>
+                <div id="meteoIcon" class="-m-5 text-center">Icona meteo</div>
             </section>
         </div>
     </body>

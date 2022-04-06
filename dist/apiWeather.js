@@ -1,4 +1,12 @@
-
+const searchWeath = () =>{
+    let searchfield = document.getElementById("findCity").value;
+    weatherByCity(searchfield);
+}
+const weatherByCity = (city)=>{
+    fetch("http://api.openweathermap.org/data/2.5/weather?q="+city+"&appId="+_TOKEN)
+    .then(data=>{ return data.json();})
+    .then(post => displayRes(post));
+}
 const fades = () =>{ 
     let page = document.getElementById("page");
     let page1 = document.getElementById("page1");
@@ -39,13 +47,8 @@ const weatherByCoord = (lat,long)=> {
         })
         .then(post => {
         displayRes(post); //ritorna coordinate
-        let divve = document.createElement("div");
-        divve.classList.add("item-center");
-        divve.classList.add("justify-center");
-        divve.innerHTML="";
-        divve.innerHTML="L'app mostrerà il meteo di: ";
-        divve.innerHTML+=post.name;
-        document.getElementById("place").appendChild(divve);
+        let nameCity = document.getElementById("nameCity");
+        nameCity.innerHTML=post.name;
         });
     }
 
