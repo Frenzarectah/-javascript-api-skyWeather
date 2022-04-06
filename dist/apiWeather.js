@@ -46,7 +46,7 @@ const weatherByCoord = (lat,long)=> {
         return data.json();
         })
         .then(post => {
-        displayRes(post); //ritorna coordinate
+        displayRes(post); //ritorna coordinate FUNZIONE DA RENDERE GENERICA PER STAMPARE SUL TEMPLATE LE INFO
         let nameCity = document.getElementById("nameCity");
         nameCity.innerHTML=post.name;
         });
