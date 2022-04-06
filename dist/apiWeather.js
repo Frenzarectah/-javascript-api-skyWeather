@@ -1,12 +1,9 @@
 
 const fades = () =>{ 
     let page = document.getElementById("page");
-    page.classList.add("fadeOut");
-    let body = document.getElementsByTagName("body");
-    body.removeChild(page);
-    page.innerHTML=`<div id="place">
-                    </div>`
-    start();
+    let page1 = document.getElementById("page1");
+    page.classList.add("hidden");
+    page1.classList.remove("hidden");
 }
 
 //FUNCTION FOR GEOLOCATING THE DEVICE
