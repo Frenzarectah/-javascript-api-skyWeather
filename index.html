@@ -10,11 +10,12 @@
         <link rel="stylesheet" href="src/style.css">
         <link rel="stylesheet" href="dist/output.css">
         <script src="dist/apiWeather.js"></script>
+        <script src="dist/script.js"></script>
     </head>
     <body>
         <div id="page" class="flex flex-col w-full h-screen justify-center items-center md:justify-start">
             <img id="logo" class="w-3/4 md:w-96" src="./src/assets/logo.png">
-            <button onclick="fades()" class="w-40 shadow-lg font-mono shadow-grey bg-[#f4855c] self-center font-thin rounded-md">Press the button to use the Force!</button>
+            <button onclick="changePage();" class="w-40 shadow-lg font-mono shadow-grey bg-[#f4855c] self-center font-thin rounded-md">Press the button to use the Force!</button>
         </div>
         <div id="page1" class="hidden flex flex-col w-full h-screen justify-start font-dosis">
             <nav class="flex flex-row justify-between items-center m-5">
@@ -26,7 +27,7 @@
             </nav>
             <section class="w-full h-screen font-dosis p-5 flex flex-col bg-[#dcdcdc]">
                 <div id="nameCity" class="text-left text-2xl">Nome Città</div>
-                <div id="meteoIcon" class="-m-5 text-center">Icona meteo</div>
+                <div id="country" class="-m-5 text-center">Icona meteo</div>
             </section>
         </div>
     </body>

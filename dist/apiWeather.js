@@ -1,30 +1,19 @@
+const _TOKEN = "c304a9d6ab5ab3f90cd09826ab7e8bec";
+//FUNCTION WHICH STARTS WEATHERBYCITY ROUTINE
 const searchWeath = () =>{
     let searchfield = document.getElementById("findCity").value;
     weatherByCity(searchfield);
 }
-const weatherByCity = (city)=>{
-    fetch("http://api.openweathermap.org/data/2.5/weather?q="+city+"&appId="+_TOKEN)
-    .then(data=>{ return data.json();})
-    .then(post => displayRes(post));
-}
-const fades = () =>{ 
-    let page = document.getElementById("page");
-    let page1 = document.getElementById("page1");
-    page.classList.add("hidden");
-    page1.classList.remove("hidden");
-}
 
 //FUNCTION FOR GEOLOCATING THE DEVICE
 let start =()=>navigator.geolocation.getCurrentPosition(success,error,optional);
-
 const success=(pos)=> {
     if(navigator.geolocation){
-        var cord = pos.coords;
+        cord = pos.coords;
         console.log(`Latitude : ${cord.latitude}`);
         console.log(`Longitude: ${cord.longitude}`);
         console.log(`More or less ${cord.accuracy} meters.`);
         weatherByCoord(cord.latitude,cord.longitude);
-
     }else{
       console.log("GeoLoc not available!");
     }
@@ -36,24 +25,37 @@ const optional = {
     enableHighAccuracy: true,
 };
 
-const _TOKEN = "c304a9d6ab5ab3f90cd09826ab7e8bec";
-
-const displayRes = (result)=> console.log(result);
-
+//THIS ARE TWO DIFFERENT REQUEST TO OPENWEATHER' API
+const weatherByCity = (city)=>{
+    fetch("http://api.openweathermap.org/data/2.5/weather?q="+city+"&appId="+_TOKEN)
+    .then(data=>{ return data.json();})
+    .then(post => renderRes(post));
+}
 const weatherByCoord = (lat,long)=> {
     fetch('https://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+long+'&appid='+_TOKEN)  
     .then(data => {
         return data.json();
         })
         .then(post => {
-        displayRes(post); //ritorna coordinate FUNZIONE DA RENDERE GENERICA PER STAMPARE SUL TEMPLATE LE INFO
-        let nameCity = document.getElementById("nameCity");
-        nameCity.innerHTML=post.name;
+        renderRes(post); 
         });
     }
 
+//API RESPONSE RENDERING FUNCT
+const renderRes = (result)=>{
+    let nameField = document.getElementById("nameCity");
+    let country = document.getElementById("country");
+    nameField.innerHTML=result.name;
+    country.innerHTML=result.weather[0].main;   
 
-  /*{"coord":{
+}
+/* info utili da json
+  nome = post.name
+  country = post.sys.country
+  tempo = post.weather[0].main
+
+
+    /*{"coord":{
       "lon":-79.4163,
       "lat":43.7001},
   "weather":[
