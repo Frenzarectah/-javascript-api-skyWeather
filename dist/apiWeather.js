@@ -1,4 +1,10 @@
 const _TOKEN = "c304a9d6ab5ab3f90cd09826ab7e8bec";
+const icon ={
+    "Clear":"./src/assets/meteo_icon/sun.png",
+    "Thunderstorm":"./src/assets/meteo_icon/thunderstorm.png",
+    "Drizzle":"./src/assets/meteo_icon/dizzle.png",
+    "Rain":"./src/assets/meteo_icon/rain.png",
+};
 //FUNCTION WHICH STARTS WEATHERBYCITY ROUTINE
 const searchWeath = () =>{
     let searchfield = document.getElementById("findCity").value;
@@ -27,12 +33,12 @@ const optional = {
 
 //THIS ARE TWO DIFFERENT REQUEST TO OPENWEATHER' API
 const weatherByCity = (city)=>{
-    fetch("http://api.openweathermap.org/data/2.5/weather?q="+city+"&appId="+_TOKEN)
+    fetch("http://api.openweathermap.org/data/2.5/weather?q="+city+"&units=metric&lang=it&appId="+_TOKEN)
     .then(data=>{ return data.json();})
     .then(post => renderRes(post));
 }
 const weatherByCoord = (lat,long)=> {
-    fetch('https://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+long+'&appid='+_TOKEN)  
+    fetch('https://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+long+'&units=metric&lang=it&appid='+_TOKEN)  
     .then(data => {
         return data.json();
         })
@@ -44,18 +50,22 @@ const weatherByCoord = (lat,long)=> {
 //API RESPONSE RENDERING FUNCT
 const renderRes = (result)=>{
     let nameField = document.getElementById("nameCity");
-    let country = document.getElementById("country");
+    let meteo_icon = document.getElementById("meteo_ico");
     nameField.innerHTML=result.name;
-    country.innerHTML=result.weather[0].main;   
-
+    nameField.innerHTML+=", "+result.sys.country;
+    let icona = document.createElement("img");
+    icona.src=icon[result.weather[0].main];
+    meteo_icon.appendChild(icona);
 }
 /* info utili da json
   nome = post.name
   country = post.sys.country
   tempo = post.weather[0].main
-
-
-    /*{"coord":{
+  gradi max = post.main.temp_max 
+  gradi min = post.main.temp_min
+  umidità = post.main.humidity
+  vento = post.wind.speed  
+  /*{"coord":{
       "lon":-79.4163,
       "lat":43.7001},
   "weather":[
