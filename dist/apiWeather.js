@@ -4,6 +4,7 @@ const icon ={
     "Thunderstorm":"./src/assets/meteo_icon/thunderstorm.png",
     "Drizzle":"./src/assets/meteo_icon/dizzle.png",
     "Rain":"./src/assets/meteo_icon/rain.png",
+    "Clouds":"./src/assets/meteo_icon/cloud.png"
 };
 //FUNCTION WHICH STARTS WEATHERBYCITY ROUTINE
 const searchWeath = () =>{
@@ -54,7 +55,9 @@ const renderRes = (result)=>{
     nameField.innerHTML=result.name;
     nameField.innerHTML+=", "+result.sys.country;
     let icona = document.createElement("img");
-    icona.src=icon[result.weather[0].main];
+    let address = result.weather[0].main;
+    icona.classList.add("rounded-md");
+    icona.src=icon[address.toString()];
     meteo_icon.appendChild(icona);
 }
 /* info utili da json
