@@ -3,7 +3,7 @@ const icon ={
     "Clear":"./src/assets/meteo_icon/sun.png",
     "Thunderstorm":"./src/assets/meteo_icon/thunderstorm.png",
     "Drizzle":"./src/assets/meteo_icon/dizzle.png",
-    "Rain":"./src/assets/meteo_icon/rain.png",
+    "Rain":"./src/assets/meteo_icon/heavy_rain.png",
     "Clouds":"./src/assets/meteo_icon/cloud.png"
 };
 //FUNCTION WHICH STARTS WEATHERBYCITY ROUTINE
