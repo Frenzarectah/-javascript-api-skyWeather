@@ -5,7 +5,7 @@ const changePage = () =>{
     page1.classList.remove("hidden");
     start();
 }
-/*const resetDOM = () =>{
-    let divs = document.getElementsByTagName("div");
+const resetDOM = () =>{
+    let divs = document.getElementsByClassName("ut");
     for (let elem of divs) elem.innerText="";
-}*/
+}

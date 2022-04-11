@@ -34,7 +34,7 @@ const optional = {
 
 //THIS ARE TWO DIFFERENT REQUEST TO OPENWEATHER' API
 const weatherByCity = (city)=>{
-    fetch("http://api.openweathermap.org/data/2.5/weather?q="+city+"&units=metric&lang=it&appId="+_TOKEN)
+    fetch("https://api.openweathermap.org/data/2.5/weather?q="+city+"&units=metric&lang=it&appId="+_TOKEN)
     .then(data=>{ return data.json();})
     .then(post => renderRes(post));
 }
@@ -50,6 +50,7 @@ const weatherByCoord = (lat,long)=> {
 
 //API RESPONSE RENDERING FUNCT
 const renderRes = (result)=>{
+    resetDOM();
     let nameField = document.getElementById("nameCity");
     let meteo_icon = document.getElementById("meteo_ico");
     let descr = document.getElementById("descr");
@@ -61,10 +62,10 @@ const renderRes = (result)=>{
     nameField.innerHTML+=", "+result.sys.country;
     meteo_icon.innerHTML="";
     descr.innerHTML=result.weather[0].description;
-    temp_min.innerText+=" "+result.main.temp_min;
-    temp_max.innerText+=" "+result.main.temp_max;
+    temp_min.innerText+=" "+Math.round(result.main.temp_min);
+    temp_max.innerText+=" "+Math.round(result.main.temp_max);
     humidity.innerText+=" "+result.main.humidity;
-    temp.innerHTML=result.main.temp;
+    temp.innerHTML=Math.round(result.main.temp);
     let icona = document.createElement("img");
     let address = result.weather[0].main;
     icona.classList.add("rounded-md");

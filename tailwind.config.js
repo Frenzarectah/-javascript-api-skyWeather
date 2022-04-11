@@ -371,7 +371,7 @@ module.exports = {
         '"Courier New"',
         'monospace',
       ],
-      geostar: ['"Geostar Fill"'],
+      anek: ['"Anek Bangla"'],
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],
