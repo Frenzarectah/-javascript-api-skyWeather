@@ -13,27 +13,31 @@
         <script src="dist/script.js"></script>
     </head>
     <body>
-        <div id="page" class="flex flex-col w-full h-screen justify-center items-center md:justify-start">
+        <section id="page" class="flex flex-col w-full h-screen justify-center items-center md:justify-start">
             <img id="logo" class="w-3/4 md:w-96" src="./src/assets/logo.png">
             <button onclick="changePage();" class="w-40 shadow-lg font-geostar text-sm shadow-grey bg-[#f4855c] self-center font-thin rounded-md">Press the button to use the Force!</button>
-        </div>
-        <div id="page1" class="hidden flex flex-col w-full h-screen justify-start font-dosis">
+        </section>
+        <section id="page1" class="hidden flex flex-col w-full h-screen justify-start font-geostar">
             <nav class="flex flex-row justify-between items-center m-5">
-                <img onclick="start()" class="w-14 md:w-16" src="./src/assets/logo_only.png">
+                <img class="w-14 md:w-16" src="./src/assets/logo_only.png">
                 <div class="flex flex-row h-9">
                     <input id="findCity" class="bg-[#f7f7f7] rounded-md p-2 w-40 font-geostar" type="search" placeholder="Find the city...">
                     <div onclick="searchWeath()" class="bg-[#f4855c] -ml-5 rounded-xl w-4/10"><img src="src/assets/magnifier.png"></div>
                 </div>    
             </nav>
-            <section class="w-full h-screen rounded-xl font-geostar p-5 flex flex-col bg-[#dcdcdc] text-[#f4855c]">
-                <div id="nameCity" class="text-center bg-white rounded-md shadow-md shadow-grey text-2xl">Nome Città</div>
-                <div id="meteo_ico" class="m-10 text-center justify-center"></div>
-                <div id="temp_container" class="flex flex-row justify-around">
-                    <div id="temp_min"></div>
-                    <div id="temp_max"></div>
-                    <div id="humidity"></div>
+            <div class="w-full h-screen flex items-center rounded-xl font-geostar p-5 flex flex-col bg-[#dcdcdc] text-[#f4855c]">
+                <div id="nameCity" class="p-5 text-center bg-white rounded-md shadow-md shadow-grey text-2xl">Nome Città</div>
+                <div class="m-5 shadow-md bg-white shadow-grey flex flex-row">
+                    <div id="meteo_ico"></div>
+                    <div class="text-xl self-center text-black" id="temp"></div>
                 </div>
-            </section>
-        </div>
+                <div id="descr" class="p-5 text-center bg-white rounded-md shadow-md shadow-grey"></div>
+                <div id="temp_container" class="flex flex-col justify-around">
+                    <div id="temp_min">Min: </div>
+                    <div id="temp_max">Max: </div>
+                    <div id="humidity">Humidity: </div>
+                </div>
+            </div>
+        </section>
     </body>
 </html>

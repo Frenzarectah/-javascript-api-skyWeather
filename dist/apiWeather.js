@@ -52,13 +52,25 @@ const weatherByCoord = (lat,long)=> {
 const renderRes = (result)=>{
     let nameField = document.getElementById("nameCity");
     let meteo_icon = document.getElementById("meteo_ico");
+    let descr = document.getElementById("descr");
+    let temp_min = document.getElementById("temp_min");
+    let temp_max = document.getElementById("temp_max");
+    let humidity = document.getElementById("humidity");
+    let temp = document.getElementById("temp");
     nameField.innerHTML=result.name;
     nameField.innerHTML+=", "+result.sys.country;
+    meteo_icon.innerHTML="";
+    descr.innerHTML=result.weather[0].description;
+    temp_min.innerText+=" "+result.main.temp_min;
+    temp_max.innerText+=" "+result.main.temp_max;
+    humidity.innerText+=" "+result.main.humidity;
+    temp.innerHTML=result.main.temp;
     let icona = document.createElement("img");
     let address = result.weather[0].main;
     icona.classList.add("rounded-md");
     icona.src=icon[address.toString()];
     meteo_icon.appendChild(icona);
+    //resetDOM();
 }
 /* info utili da json
   nome = post.name

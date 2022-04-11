@@ -3,4 +3,9 @@ const changePage = () =>{
     let page1 = document.getElementById("page1");
     page.classList.add("hidden");
     page1.classList.remove("hidden");
+    start();
 }
+/*const resetDOM = () =>{
+    let divs = document.getElementsByTagName("div");
+    for (let elem of divs) elem.innerText="";
+}*/
