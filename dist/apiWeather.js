@@ -27,7 +27,7 @@ const success=(pos)=> {
     }
   }
 const error=()=>{
-    alert('no position available.');
+    alert('posizione non condivisa dal browser, puoi usare la ricerca città come alternativa!');
 }
 const optional = {
     enableHighAccuracy: true,
