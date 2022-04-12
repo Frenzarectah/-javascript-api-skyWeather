@@ -15,8 +15,8 @@
     </head>
     <body>
         <section id="page" class="blur-none flex flex-col w-full h-screen justify-center items-center md:justify-start">
-            <img id="logo" class="w-3/4 md:w-96" src="./src/assets/meteo_log.jpg">
-            <button onclick="changePage();" class="m-5 border border-black w-40 shadow-lg font-anek text-sm shadow-black bg-[#2b9ad8] self-center font-thin rounded-md">Press the button to use the Force!</button>
+            <img id="logo" class="w-3/4 md:w-96" src="./src/assets/logo.png">
+            <button onclick="changePage();" class="m-5 w-40 shadow-md font-anek text-sm shadow-grey bg-[#919afe] self-center font-thin rounded-md">Press the button to use the Force!</button>
         </section>
         <section id="page1" class="hidden flex flex-col w-full h-screen justify-start font-anek">
             <nav class="flex flex-row justify-between items-center m-5">
@@ -26,20 +26,22 @@
                 <button class="invisible md:visible md:overline md:hover:underline" onclick="weatherByCity('Bari')">Bari</button>
                 <div class="flex flex-row h-9">
                     <input id="findCity" class="bg-[#f7f7f7] rounded-md p-2 w-40 font-anek" type="search" placeholder="Find the city...">
-                    <div onclick="searchWeath()" class="bg-[#f4855c] -ml-5 rounded-xl w-10 md:w-10 items-center"><img src="src/assets/magnifier.png"></div>
+                    <div onclick="searchWeath()" class="bg-[#feaf39] -ml-5 rounded-xl w-10 md:w-10 items-center"><img src="src/assets/magnifier.png"></div>
                 </div>    
             </nav>
             <div class="w-full h-screen bg-transparent flex items-center rounded-xl font-anek p-5 flex flex-col text-black">
                 <div id="nameCity" class="ut p-5 text-center bg-transparent rounded-md shadow-md shadow-grey text-2xl">Città...</div>
-                <div class="flex flex-row">
-                    <div class="m-5 shadow-xl bg-transparent shadow-grey" id="meteo_ico"></div>
-                    <div class="text-2xl text-black" id="temp"></div>
+                <div class="flex flex-row justify-center items-center">
+                    <div class="m-5" id="meteo_ico"></div>
+                    <div class="text-2xl text-black ut" id="temp"></div>
                 </div>
-                <div id="descr" class="ut p-5 text-center bg-transparent rounded-md shadow-md shadow-grey"></div>
-                <div id="temp_container" class="flex flex-col justify-around">
-                    <div class="text-black text-md">Temp Min:<span class="ut" id="temp_min"></span></div>
-                    <div>Temp Max:<span class="ut" id="temp_max"></span></div>
-                    <div>Humidity:<span class="ut" id="humidity"></span></div>
+                <div class="p-5 text-center bg-transparent rounded-md shadow-md shadow-grey">
+                    <div id="descr"></div>
+                    <div id="temp_container" class="flex flex-col justify-around">
+                        <div class="text-black text-md">Temp Min:<span class="ut" id="temp_min"></span></div>
+                        <div>Temp Max:<span class="ut" id="temp_max"></span></div>
+                        <div>Humidity:<span class="ut" id="humidity"></span></div>
+                    </div>
                 </div>
             </div>
         </section>

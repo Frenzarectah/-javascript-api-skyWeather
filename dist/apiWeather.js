@@ -51,27 +51,34 @@ const weatherByCoord = (lat,long)=> {
 
 //API RESPONSE RENDERING FUNCT
 const renderRes = (result)=>{
+    if (result.coord){
+        resetDOM();
+         nameField = document.getElementById("nameCity");
+        let descr = document.getElementById("descr");
+         meteo_icon = document.getElementById("meteo_ico");
+        let temp_min = document.getElementById("temp_min");
+        let temp_max = document.getElementById("temp_max");
+        let humidity = document.getElementById("humidity");
+        let temp = document.getElementById("temp");
+        nameField.innerHTML=result.name;
+        nameField.innerHTML+=", "+result.sys.country;
+        meteo_icon.innerHTML="";
+        descr.innerHTML=result.weather[0].description;
+        temp_min.innerText+=" "+Math.round(result.main.temp_min)+"°";
+        temp_max.innerText+=" "+Math.round(result.main.temp_max)+"°";
+        humidity.innerText+=" "+result.main.humidity+"%";
+        temp.innerHTML=Math.round(result.main.temp)+"°";
+        let icona = document.createElement("img");
+        let address = result.weather[0].main;
+        icona.classList.add("rounded-md");
+        icona.src=icon[address.toString()];
+        meteo_icon.appendChild(icona);
+}else{
     resetDOM();
-    let nameField = document.getElementById("nameCity");
-    let meteo_icon = document.getElementById("meteo_ico");
-    let descr = document.getElementById("descr");
-    let temp_min = document.getElementById("temp_min");
-    let temp_max = document.getElementById("temp_max");
-    let humidity = document.getElementById("humidity");
-    let temp = document.getElementById("temp");
-    nameField.innerHTML=result.name;
-    nameField.innerHTML+=", "+result.sys.country;
-    meteo_icon.innerHTML="";
-    descr.innerHTML=result.weather[0].description;
-    temp_min.innerText+=" "+Math.round(result.main.temp_min)+"°";
-    temp_max.innerText+=" "+Math.round(result.main.temp_max)+"°";
-    humidity.innerText+=" "+result.main.humidity+"%";
-    temp.innerHTML=Math.round(result.main.temp)+"°";
-    let icona = document.createElement("img");
-    let address = result.weather[0].main;
-    icona.classList.add("rounded-md");
-    icona.src=icon[address.toString()];
-    meteo_icon.appendChild(icona);
+    nameField.innerHTML="Errore! Città non trovata!"
+    meteo_ico.classList.add("text-2xl")
+    meteo_ico.innerHTML="¯\\_(ツ)_/¯"
+}
 }
 /* info utili da json
   nome = post.name
