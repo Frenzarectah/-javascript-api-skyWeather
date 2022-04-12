@@ -4,4 +4,10 @@ A project aimed to practice and undestrand fetch api and asyncronous scripting i
 # Technologies </br>
 Js with fetch api to connect with <a href="https://openweathermap.org/">OpenWeather</a> <br>
 <a href="https://tailwindcss.com">Tailwindcss</a> for the styling</br>
+Try this project on <a href="https://skyweather-frenz.netlify.app/>Netlify</a><br>
+# Usage #
+Click on the first button to start the application, on start you'll be able to see the weather on your<br>
+actual position (finded with <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/geolocation">Navigator.geolocator</a>).<br>
+After that, via searchfield you'll also be able to find every city you want :)
+ 
 # Enjoy! #
