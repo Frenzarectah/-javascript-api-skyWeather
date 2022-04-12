@@ -9,3 +9,4 @@ const resetDOM = () =>{
     let divs = document.getElementsByClassName("ut");
     for (let elem of divs) elem.innerText="";
 }
+

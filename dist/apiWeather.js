@@ -1,4 +1,5 @@
 const _TOKEN = "c304a9d6ab5ab3f90cd09826ab7e8bec";
+
 const icon ={
     "Clear":"./src/assets/meteo_icon/sun.png",
     "Thunderstorm":"./src/assets/meteo_icon/thunderstorm.png",
@@ -62,16 +63,15 @@ const renderRes = (result)=>{
     nameField.innerHTML+=", "+result.sys.country;
     meteo_icon.innerHTML="";
     descr.innerHTML=result.weather[0].description;
-    temp_min.innerText+=" "+Math.round(result.main.temp_min);
-    temp_max.innerText+=" "+Math.round(result.main.temp_max);
-    humidity.innerText+=" "+result.main.humidity;
-    temp.innerHTML=Math.round(result.main.temp);
+    temp_min.innerText+=" "+Math.round(result.main.temp_min)+"°";
+    temp_max.innerText+=" "+Math.round(result.main.temp_max)+"°";
+    humidity.innerText+=" "+result.main.humidity+"%";
+    temp.innerHTML=Math.round(result.main.temp)+"°";
     let icona = document.createElement("img");
     let address = result.weather[0].main;
     icona.classList.add("rounded-md");
     icona.src=icon[address.toString()];
     meteo_icon.appendChild(icona);
-    //resetDOM();
 }
 /* info utili da json
   nome = post.name
