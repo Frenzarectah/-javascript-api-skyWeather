@@ -15,12 +15,12 @@
     </head>
     <body>
         <section id="page" class="blur-none flex flex-col w-full h-screen justify-center items-center md:justify-start">
-            <img id="logo" class="w-3/4 md:w-96" src="./src/assets/logo.png">
+            <img id="logo" class="w-52 md:w-64" src="./src/assets/logo_.png">
             <button onclick="changePage();" class="m-5 w-40 shadow-md font-anek text-sm shadow-grey bg-[#919afe] self-center font-thin rounded-md">Press the button to use the Force!</button>
         </section>
         <section id="page1" class="hidden flex flex-col w-full h-screen justify-start font-anek">
             <nav class="flex flex-row justify-between items-center m-5">
-                <img class="w-14 md:w-16" src="./src/assets/logo_small.png">
+                <img class="w-14 md:w-16" src="./src/assets/logo_.png">
                 <button class="invisible md:visible md:overline md:hover:underline" onclick="weatherByCity('Milano')">Milano</button>
                 <button class="invisible md:visible md:overline md:hover:underline" onclick="weatherByCity('Roma')">Roma</button>
                 <button class="invisible md:visible md:overline md:hover:underline" onclick="weatherByCity('Bari')">Bari</button>
@@ -36,7 +36,7 @@
                     <div class="text-2xl text-black ut" id="temp"></div>
                 </div>
                 <div class="p-5 text-center bg-transparent rounded-md shadow-md shadow-grey">
-                    <div id="descr"></div>
+                    <div><span id="descr"></span></div>
                     <div id="temp_container" class="flex flex-col justify-around">
                         <div class="text-black text-md">Temp Min:<span class="ut" id="temp_min"></span></div>
                         <div>Temp Max:<span class="ut" id="temp_max"></span></div>

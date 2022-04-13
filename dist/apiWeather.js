@@ -51,10 +51,10 @@ const weatherByCoord = (lat,long)=> {
 
 //API RESPONSE RENDERING FUNCT
 const renderRes = (result)=>{
+    resetDOM();
     if (result.coord){
-        resetDOM();
          nameField = document.getElementById("nameCity");
-        let descr = document.getElementById("descr");
+        descr = document.getElementById("descr");
          meteo_icon = document.getElementById("meteo_ico");
         let temp_min = document.getElementById("temp_min");
         let temp_max = document.getElementById("temp_max");
@@ -78,8 +78,10 @@ const renderRes = (result)=>{
     nameField.innerHTML="Errore! Città non trovata!"
     meteo_ico.classList.add("text-2xl")
     meteo_ico.innerHTML="¯\\_(ツ)_/¯"
+    descr.innerHTML="RITENTA!"
 }
 }
+
 /* info utili da json
   nome = post.name
   country = post.sys.country
