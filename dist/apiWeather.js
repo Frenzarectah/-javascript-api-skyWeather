@@ -38,6 +38,7 @@ const weatherByCity = (city)=>{
     fetch("https://api.openweathermap.org/data/2.5/weather?q="+city+"&units=metric&lang=it&appId="+_TOKEN)
     .then(data=>{ return data.json();})
     .then(post => renderRes(post));
+    console.log("loading...");
 }
 const weatherByCoord = (lat,long)=> {
     fetch('https://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+long+'&units=metric&lang=it&appid='+_TOKEN)  
@@ -47,8 +48,9 @@ const weatherByCoord = (lat,long)=> {
         .then(post => {
         renderRes(post); 
         });
+        console.log("loading...");
+        weath
     }
-
 //API RESPONSE RENDERING FUNCT
 const renderRes = (result)=>{
     resetDOM();
