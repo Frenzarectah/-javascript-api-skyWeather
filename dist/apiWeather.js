@@ -54,7 +54,7 @@ const weatherByCoord = (lat,long)=> {
 //API RESPONSE RENDERING FUNCT
 const renderRes = (result)=>{
     resetDOM();
-    if (result.coord){
+    if (result.coord){ //if coord key is present into the JSON, so the city exists
          nameField = document.getElementById("nameCity");
         descr = document.getElementById("descr");
          meteo_icon = document.getElementById("meteo_ico");
@@ -75,7 +75,7 @@ const renderRes = (result)=>{
         icona.classList.add("rounded-md");
         icona.src=icon[address.toString()];
         meteo_icon.appendChild(icona);
-}else{
+}else{  //else, reset the DOM and modify the response layout
     resetDOM();
     nameField.innerHTML="Errore! Città non trovata!"
     meteo_ico.classList.add("text-2xl")
@@ -83,6 +83,20 @@ const renderRes = (result)=>{
     descr.innerHTML="RITENTA!"
 }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* info utili da json
   nome = post.name
