@@ -16,8 +16,12 @@ const searchWeath = () =>{
 //THIS ARE TWO DIFFERENT REQUEST TO OPENWEATHER' API
 const weatherByCity = (city)=>{
     fetch("https://api.openweathermap.org/data/2.5/weather?q="+city+"&units=metric&lang=it&appId="+_TOKEN)
-    .then(data=>{ return data.json();})
-    .then(post => renderRes(post));
+    .then(data=>{ 
+        return data.json();
+    })
+    .then(post =>{ 
+        template(post,"page1");
+    });
     console.log("loading...");
 }
 const weatherByCoord = (lat,long)=> {
@@ -25,44 +29,10 @@ const weatherByCoord = (lat,long)=> {
     .then(data => {
         return data.json();
         })
-        .then(post => {
-        renderRes(post); 
-        });
-        console.log("loading...");
-        weath
+    .then(post => {
+        template(post,"page1"); 
+    });
     }
-//API RESPONSE RENDERING FUNCT
-const renderRes = (result)=>{
-    resetDOM();
-    if (result.coord){ //if coord key is present into the JSON, so the city exists
-         nameField = document.getElementById("nameCity");
-        descr = document.getElementById("descr");
-         meteo_icon = document.getElementById("meteo_ico");
-        let temp_min = document.getElementById("temp_min");
-        let temp_max = document.getElementById("temp_max");
-        let humidity = document.getElementById("humidity");
-        let temp = document.getElementById("temp");
-        nameField.innerHTML=result.name;
-        nameField.innerHTML+=", "+result.sys.country;
-        meteo_icon.innerHTML="";
-        descr.innerHTML=result.weather[0].description;
-        temp_min.innerText+=" "+Math.round(result.main.temp_min)+"°";
-        temp_max.innerText+=" "+Math.round(result.main.temp_max)+"°";
-        humidity.innerText+=" "+result.main.humidity+"%";
-        temp.innerHTML=Math.round(result.main.temp)+"°";
-        let icona = document.createElement("img");
-        let address = result.weather[0].main;
-        icona.classList.add("rounded-md");
-        icona.src=icon[address.toString()];
-        meteo_icon.appendChild(icona);
-}else{  //else, reset the DOM and modify the response layout
-    resetDOM();
-    nameField.innerHTML="Errore! Città non trovata!"
-    meteo_ico.classList.add("text-2xl")
-    meteo_ico.innerHTML="¯\\_(ツ)_/¯"
-    descr.innerHTML="RITENTA!"
-}
-}
 
 
 

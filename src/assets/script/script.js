@@ -9,14 +9,11 @@ const resetDOM = () =>{
     let divs = document.getElementsByClassName("ut");
     for (let elem of divs) elem.innerText="";
 }
-//FUNCTION FOR GEOLOCATING THE DEVICE
+//MODULE FOR GEOLOCATING THE DEVICE
 const obtainPos =()=>navigator.geolocation.getCurrentPosition(success,error,optional);
 const success=(pos)=> {
     if(navigator.geolocation){
         cord = pos.coords;
-        console.log(`Latitude : ${cord.latitude}`);
-        console.log(`Longitude: ${cord.longitude}`);
-        console.log(`More or less ${cord.accuracy} meters.`);
         weatherByCoord(cord.latitude,cord.longitude);
     }else{
       console.log("GeoLoc not available!");
