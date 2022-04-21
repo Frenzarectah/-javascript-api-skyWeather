@@ -13,26 +13,6 @@ const searchWeath = () =>{
     weatherByCity(searchfield);
 }
 
-//FUNCTION FOR GEOLOCATING THE DEVICE
-let start =()=>navigator.geolocation.getCurrentPosition(success,error,optional);
-const success=(pos)=> {
-    if(navigator.geolocation){
-        cord = pos.coords;
-        console.log(`Latitude : ${cord.latitude}`);
-        console.log(`Longitude: ${cord.longitude}`);
-        console.log(`More or less ${cord.accuracy} meters.`);
-        weatherByCoord(cord.latitude,cord.longitude);
-    }else{
-      console.log("GeoLoc not available!");
-    }
-  }
-const error=()=>{
-    alert('posizione non condivisa dal browser, puoi usare la ricerca città come alternativa!');
-}
-const optional = {
-    enableHighAccuracy: true,
-};
-
 //THIS ARE TWO DIFFERENT REQUEST TO OPENWEATHER' API
 const weatherByCity = (city)=>{
     fetch("https://api.openweathermap.org/data/2.5/weather?q="+city+"&units=metric&lang=it&appId="+_TOKEN)
