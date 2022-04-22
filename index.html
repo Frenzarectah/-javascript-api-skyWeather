@@ -16,6 +16,7 @@
         <script src="src/assets/script/apiWeather.js"></script>
         <script src="src/assets/script/script.js"></script>
         <script src="src/assets/script/template.js"></script>
+        <script src="src/assets/script/template1.js"></script>
     </head>
     <body>
         <section id="page" class="blur-none flex flex-col w-full h-screen justify-center items-center md:justify-start">
@@ -23,7 +24,8 @@
             <button onclick="changePage();" class="m-5 w-40 shadow-md font-anek text-sm shadow-grey bg-[#919afe] self-center font-thin rounded-md">Click to avoid looking up! :D</button>
         </section>
         <section id="page1" class="hidden flex flex-col w-full h-screen justify-start font-anek">
-            <nav class="flex flex-row justify-between items-center m-5">
+            <img class="w-52 md:w-64" src="./src/assets/loader.gif">
+            <!--    <nav class="flex flex-row justify-between items-center m-5">
                 <img class="w-14 md:w-16" src="./src/assets/logo_.png">
                 <button class="invisible md:visible md:overline md:hover:underline" onclick="weatherByCity('Milano')">Milano</button>
                 <button class="invisible md:visible md:overline md:hover:underline" onclick="weatherByCity('Roma')">Roma</button>
@@ -47,7 +49,7 @@
                         <div>Humidity:<span class="ut" id="humidity"></span></div>
                     </div>
                 </div>
-            </div>
+            </div>-->
         </section>
     </body>
 </html>

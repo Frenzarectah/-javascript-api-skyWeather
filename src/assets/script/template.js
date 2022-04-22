@@ -1,4 +1,4 @@
-    const template=(jsonFile,base)=>{
+    const templatez=(jsonFile,base)=>{
         let root = document.getElementById(base);
         if(jsonFile.cod!="404"){
             root.innerHTML=`
@@ -9,7 +9,7 @@
                 <button class="invisible md:visible md:overline md:hover:underline" onclick="weatherByCity('Bari')">Bari</button>
                 <div class="flex flex-row h-9">
                     <input id="findCity" class="bg-[#f7f7f7] rounded-md p-2 w-40 font-anek" type="search" placeholder="Find the city...">
-                    <div onclick="searchWeath()" class="bg-[#feaf39] -ml-5 rounded-xl w-10 md:w-10 items-center"><img src="src/assets/magnifier.png"></div>
+                    <div onclick="searchWeather()" class="bg-[#feaf39] -ml-5 rounded-xl w-10 md:w-10 items-center"><img src="src/assets/magnifier.png"></div>
                 </div>    
             </nav>
             <div class="w-full h-screen bg-transparent flex items-center rounded-xl font-anek p-5 flex flex-col text-black">
@@ -37,7 +37,7 @@
                 <button class="invisible md:visible md:overline md:hover:underline" onclick="weatherByCity('Bari')">Bari</button>
                 <div class="flex flex-row h-9">
                     <input id="findCity" class="bg-[#f7f7f7] rounded-md p-2 w-40 font-anek" type="search" placeholder="Find the city...">
-                    <div onclick="searchWeath()" class="bg-[#feaf39] -ml-5 rounded-xl w-10 md:w-10 items-center"><img src="src/assets/magnifier.png"></div>
+                    <div onclick="searchWeather()" class="bg-[#feaf39] -ml-5 rounded-xl w-10 md:w-10 items-center"><img src="src/assets/magnifier.png"></div>
                 </div>    
             </nav>
             <div class="w-full h-screen bg-transparent flex items-center rounded-xl font-anek p-5 flex flex-col text-black">
@@ -58,4 +58,4 @@
         </section>`
     }
     }
-    document.addEventListener("load", template);
+    document.addEventListener("load", templatez);
