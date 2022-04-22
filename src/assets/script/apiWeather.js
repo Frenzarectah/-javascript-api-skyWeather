@@ -4,6 +4,7 @@ const icon ={
     "Clear":"./src/assets/meteo_icon/sun.png",
     "Thunderstorm":"./src/assets/meteo_icon/thunderstorm.png",
     "Drizzle":"./src/assets/meteo_icon/dizzle.png",
+    "Mist":"./src/assets/meteo_icon/fog.png",
     "Rain":"./src/assets/meteo_icon/heavy_rain.png",
     "Clouds":"./src/assets/meteo_icon/cloud.png"
 };
