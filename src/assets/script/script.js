@@ -20,7 +20,8 @@ const success=(pos)=> {
     }
   }
 const error=()=>{
-    alert('posizione non condivisa dal browser, puoi usare la ricerca città come alternativa!');
+    let layout = templateFail();
+    renderingDOM(layout,"page1");
 }
 const optional = {
     enableHighAccuracy: true,

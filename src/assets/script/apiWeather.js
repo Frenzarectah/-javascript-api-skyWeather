@@ -30,22 +30,28 @@ const weatherByCity = (city)=>{
         return data.json();
     })
     .then(post =>{ 
-        const page = document.getElementById("page1");
-        const layout = template(post);
-        renderingDOM(layout,page);
+        if(post.cod!="404"){
+            const layout = template(post);
+            renderingDOM(layout,"page1");
+        }else{
+            const layout = templateFail();
+            renderingDOM(layout,"page1")
+        }
     });
-    console.log("loading...");
 }
 //this is a function to extract the weather at given coordinates
 const weatherByCoord = (lat,long)=> {
     const url ='https://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+long+'&units=metric&lang=it&appid='+_TOKEN
-    fetch(url)  
+    fetch(url) 
+    .catch(()=>{ 
+        const layout = templateFail();
+        document.onload=()=> renderingDOM(layout,"page1")
+    })
     .then(data => {
         return data.json();
     })
     .then(post => { 
-        const page = document.getElementById("page1");
         const layout = template(post);
-        renderingDOM(layout,page);
-    });
+        renderingDOM(layout,"page1");
+    })
     }
