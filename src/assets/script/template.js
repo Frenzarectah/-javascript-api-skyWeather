@@ -1,4 +1,6 @@
-const template =(jsonFile)=>
+//this file contains two different layout according to the state of the fetching process
+
+const template =(jsonFile)=>   //this will create a string containing all the right meteo informations 
     `
     <nav class="flex flex-row justify-between items-center m-5">
                 <img class="w-14 md:w-16" src="./src/assets/logo_.png">
@@ -27,11 +29,8 @@ const template =(jsonFile)=>
             </div>
         </section>
     `
-const renderingDOM = (Literals,page) =>{
-    const root = document.getElementById(page);
-    root.innerHTML=Literals;
-}
-const templateFail =()=>
+
+const templateFail =()=>  //instead this will create a string containing an error screen
     `
     <nav class="flex flex-row justify-between items-center m-5">
                 <img class="w-14 md:w-16" src="./src/assets/logo_.png">
@@ -60,3 +59,7 @@ const templateFail =()=>
             </div>
         </section>
     `
+const renderingDOM = (Literals,page) =>{
+    const root = document.getElementById(page);
+    root.innerHTML=Literals;
+}

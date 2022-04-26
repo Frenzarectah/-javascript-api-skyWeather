@@ -30,11 +30,11 @@ const weatherByCity = (city)=>{
         return data.json();
     })
     .then(post =>{ 
-        if(post.cod!="404"){
-            const layout = template(post);
-            renderingDOM(layout,"page1");
-        }else{
+        if(post.cod =="404"){  //if a query returns a 404 code, then an error template will be rendered
             const layout = templateFail();
+            renderingDOM(layout,"page1");
+        }else{                 //else, the template rendered will contains all the informations needed
+            const layout = template(post);
             renderingDOM(layout,"page1")
         }
     });
@@ -45,7 +45,7 @@ const weatherByCoord = (lat,long)=> {
     fetch(url) 
     .catch(()=>{ 
         const layout = templateFail();
-        document.onload=()=> renderingDOM(layout,"page1")
+        renderingDOM(layout,"page1")
     })
     .then(data => {
         return data.json();
