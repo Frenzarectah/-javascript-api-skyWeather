@@ -3,13 +3,13 @@
 const template =(jsonFile)=>   //this will create a string containing all the right meteo informations 
     `
     <nav class="flex flex-row justify-between items-center m-5">
-                <img class="w-14 md:w-16" src="assets/logo_.png" onclick="obtainPos()">
+                <img class="w-14 md:w-16" src="src/assets/logo_.png" onclick="obtainPos()">
                 <button class="invisible md:visible md:overline md:hover:underline" onclick="weatherByCity('Milano')">Milano</button>
                 <button class="invisible md:visible md:overline md:hover:underline" onclick="weatherByCity('Roma')">Roma</button>
                 <button class="invisible md:visible md:overline md:hover:underline" onclick="weatherByCity('Bari')">Bari</button>
                 <div class="flex flex-row h-9">
                     <input id="findCity" class="bg-[#f7f7f7] rounded-md p-2 w-40 font-anek" type="search" placeholder="Find the city...">
-                    <div onclick="searchWeather()" class="bg-[#feaf39] -ml-5 rounded-xl w-10 md:w-10 items-center"><img src="assets/magnifier.png"></div>
+                    <div onclick="searchWeather()" class="bg-[#feaf39] -ml-5 rounded-xl w-10 md:w-10 items-center"><img src="src/assets/magnifier.png"></div>
                 </div>    
             </nav>
             <div class="w-full h-screen bg-transparent flex items-center rounded-xl font-anek p-5 flex flex-col text-black">
@@ -33,13 +33,13 @@ const template =(jsonFile)=>   //this will create a string containing all the ri
 const templateFail =()=>  //instead this will create a string containing an error screen
     `
     <nav class="flex flex-row justify-between items-center m-5">
-                <img class="w-14 md:w-16" src="assets/logo_.png" onclick="obtainPos()">
+                <img class="w-14 md:w-16" src="src/assets/logo_.png" onclick="obtainPos()">
                 <button class="invisible md:visible md:overline md:hover:underline" onclick="weatherByCity('Milano')">Milano</button>
                 <button class="invisible md:visible md:overline md:hover:underline" onclick="weatherByCity('Roma')">Roma</button>
                 <button class="invisible md:visible md:overline md:hover:underline" onclick="weatherByCity('Bari')">Bari</button>
                 <div class="flex flex-row h-9">
                     <input id="findCity" class="bg-[#f7f7f7] rounded-md p-2 w-40 font-anek" type="search" placeholder="Find the city...">
-                    <div onclick="searchWeather()" class="bg-[#feaf39] -ml-5 rounded-xl w-10 md:w-10 items-center"><img src="assets/magnifier.png"></div>
+                    <div onclick="searchWeather()" class="bg-[#feaf39] -ml-5 rounded-xl w-10 md:w-10 items-center"><img src="src/assets/magnifier.png"></div>
                 </div>    
             </nav>
             <div class="w-full h-screen bg-transparent flex items-center rounded-xl font-anek p-5 flex flex-col text-black">
