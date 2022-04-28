@@ -13,7 +13,7 @@ const obtainPosOK=(pos)=> {
         cord = pos.coords;
         weatherByCoord(cord.latitude,cord.longitude);
     }else{
-      console.log("GeoLoc not available!");
+      alert("Localizzazione non disponibile! Attivala o prova a ricercare per Città!");
     }
   }
 

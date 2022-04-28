@@ -7,12 +7,12 @@ const _TOKEN = "c304a9d6ab5ab3f90cd09826ab7e8bec";
 //weather returned by the API
 
 const icon ={
-    "Clear":"./src/assets/meteo_icon/sun.png",
-    "Thunderstorm":"./src/assets/meteo_icon/thunderstorm.png",
-    "Drizzle":"./src/assets/meteo_icon/dizzle.png",
-    "Mist":"./src/assets/meteo_icon/fog.png",
-    "Rain":"./src/assets/meteo_icon/heavy_rain.png",
-    "Clouds":"./src/assets/meteo_icon/cloud.png"
+    "Clear":"assets/meteo_icon/sun.png",
+    "Thunderstorm":"assets/meteo_icon/thunderstorm.png",
+    "Drizzle":"assets/meteo_icon/dizzle.png",
+    "Mist":"assets/meteo_icon/fog.png",
+    "Rain":"assets/meteo_icon/heavy_rain.png",
+    "Clouds":"assets/meteo_icon/cloud.png"
 };
 //this is the funct which extracts the typed city name into the searchfield and
 //runs the weatherByCity routine
