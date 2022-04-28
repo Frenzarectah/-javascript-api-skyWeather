@@ -3,7 +3,7 @@
 const template =(jsonFile)=>   //this will create a string containing all the right meteo informations 
     `
     <nav class="flex flex-row justify-between items-center m-5">
-                <img class="w-14 md:w-16" src="./src/assets/logo_.png">
+                <img class="w-14 md:w-16" src="./src/assets/logo_.png" onclick="obtainPos()">
                 <button class="invisible md:visible md:overline md:hover:underline" onclick="weatherByCity('Milano')">Milano</button>
                 <button class="invisible md:visible md:overline md:hover:underline" onclick="weatherByCity('Roma')">Roma</button>
                 <button class="invisible md:visible md:overline md:hover:underline" onclick="weatherByCity('Bari')">Bari</button>
@@ -33,7 +33,7 @@ const template =(jsonFile)=>   //this will create a string containing all the ri
 const templateFail =()=>  //instead this will create a string containing an error screen
     `
     <nav class="flex flex-row justify-between items-center m-5">
-                <img class="w-14 md:w-16" src="./src/assets/logo_.png">
+                <img class="w-14 md:w-16" src="./src/assets/logo_.png" onclick="obtainPos()">
                 <button class="invisible md:visible md:overline md:hover:underline" onclick="weatherByCity('Milano')">Milano</button>
                 <button class="invisible md:visible md:overline md:hover:underline" onclick="weatherByCity('Roma')">Roma</button>
                 <button class="invisible md:visible md:overline md:hover:underline" onclick="weatherByCity('Bari')">Bari</button>
