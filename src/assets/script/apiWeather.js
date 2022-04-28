@@ -30,7 +30,7 @@ const weatherByCity = (city)=>{
         return data.json();
     })
     .then(post =>{ 
-        if(post.cod =="404"){  //if a query returns a 404 code, then an error template will be rendered
+        if(post.cod == "404"){  //if a query returns a 404 code, then an error template will be rendered
             const layout = templateFail();
             renderingDOM(layout,"page1");
         }else{                 //else, the template rendered will contains all the informations needed
