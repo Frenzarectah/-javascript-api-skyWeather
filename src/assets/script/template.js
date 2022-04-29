@@ -59,7 +59,7 @@ const templateFail =()=>  //instead this will create a string containing an erro
             </div>
         </section>
     `
-const renderingDOM = (Literals,page) =>{
-    const root = document.getElementById(page);
+const renderingDOM = (Literals,page) =>{        //this funct takes the literal templates above according to the API response
+    const root = document.getElementById(page); //and the Id of where the templates will be rendered.
     root.innerHTML=Literals;
 }
